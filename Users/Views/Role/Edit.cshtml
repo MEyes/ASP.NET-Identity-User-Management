@@ -1,0 +1,69 @@
+﻿
+@using Users.Models
+@model RoleEditModel
+@{
+    ViewBag.Title = "编辑角色";
+}
+@Html.ValidationSummary()
+
+@using (Html.BeginForm())
+{
+    <input type="hidden" name="roleName" value="@Model.Role.Name"/>
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            Add to @Model.Role.Name
+        </div>
+        <table class="table table-striped">
+            @if (Model.NonMembers.Count() == 0)
+            {
+                <tr>
+                    <td colspan="2">
+                        All Users Are Members
+                    </td>
+                </tr>
+            }
+            else
+            {
+                <tr>
+                    <td>User ID</td>
+                    <td>Add To Role</td>
+                </tr>
+                foreach (AppUser user in Model.NonMembers)
+                {
+                    <tr>
+                        <td>@user.UserName</td>
+                        <td>
+                            <input type="checkbox" name="IdsToAdd" value="@user.Id">
+                        </td>
+                    </tr>
+                }
+            }
+        </table>
+    </div>
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            Romove From @Model.Role.Name
+        </div>
+        <table class="table table-striped">
+            @if (Model.Members.Count() == 0)
+            {
+                <tr><td colspan="2">No Users Are Members</td></tr>
+            }
+            else
+            {
+                <tr><td>User ID</td><td>Remove From Role</td></tr>
+                foreach (AppUser user in Model.Members)
+                {
+                    <tr>
+                        <td>@user.UserName</td>
+                        <td>
+                            <input type="checkbox" name="IdsToDelete" value="@user.Id">
+                        </td>
+                    </tr>
+                }
+            }
+        </table>
+    </div>
+    <button type="submit" class="btn btn-primary">保存</button>
+    @Html.ActionLink("Cancel", "Index", null, new { @class = "btn btn-default" })
+}

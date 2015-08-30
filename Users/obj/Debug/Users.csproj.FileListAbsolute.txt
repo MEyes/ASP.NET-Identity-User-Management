@@ -40,3 +40,44 @@ G:\Code\9781430265412\Chapter 13\Users\Users\obj\Debug\Users.pdb
 G:\Code\9781430265412\Chapter 13\Users\Users\bin\Microsoft.Web.Infrastructure.dll
 G:\Code\9781430265412\Chapter 13\Users\Users\bin\System.Web.Mvc.dll
 G:\Code\9781430265412\Chapter 13\Users\Users\bin\System.Web.Mvc.xml
+F:\github\ASP.NET-Identity-User-Management\Users\bin\Users.dll.config
+F:\github\ASP.NET-Identity-User-Management\Users\bin\Users.dll
+F:\github\ASP.NET-Identity-User-Management\Users\bin\Users.pdb
+F:\github\ASP.NET-Identity-User-Management\Users\bin\EntityFramework.dll
+F:\github\ASP.NET-Identity-User-Management\Users\bin\EntityFramework.SqlServer.dll
+F:\github\ASP.NET-Identity-User-Management\Users\bin\Microsoft.AspNet.Identity.Core.dll
+F:\github\ASP.NET-Identity-User-Management\Users\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+F:\github\ASP.NET-Identity-User-Management\Users\bin\Microsoft.AspNet.Identity.Owin.dll
+F:\github\ASP.NET-Identity-User-Management\Users\bin\Microsoft.Owin.dll
+F:\github\ASP.NET-Identity-User-Management\Users\bin\Microsoft.Owin.Host.SystemWeb.dll
+F:\github\ASP.NET-Identity-User-Management\Users\bin\Microsoft.Owin.Security.Cookies.dll
+F:\github\ASP.NET-Identity-User-Management\Users\bin\Microsoft.Owin.Security.dll
+F:\github\ASP.NET-Identity-User-Management\Users\bin\Microsoft.Owin.Security.OAuth.dll
+F:\github\ASP.NET-Identity-User-Management\Users\bin\Microsoft.Web.Infrastructure.dll
+F:\github\ASP.NET-Identity-User-Management\Users\bin\Newtonsoft.Json.dll
+F:\github\ASP.NET-Identity-User-Management\Users\bin\Owin.dll
+F:\github\ASP.NET-Identity-User-Management\Users\bin\System.Web.Helpers.dll
+F:\github\ASP.NET-Identity-User-Management\Users\bin\System.Web.Mvc.dll
+F:\github\ASP.NET-Identity-User-Management\Users\bin\System.Web.Razor.dll
+F:\github\ASP.NET-Identity-User-Management\Users\bin\System.Web.WebPages.Deployment.dll
+F:\github\ASP.NET-Identity-User-Management\Users\bin\System.Web.WebPages.dll
+F:\github\ASP.NET-Identity-User-Management\Users\bin\System.Web.WebPages.Razor.dll
+F:\github\ASP.NET-Identity-User-Management\Users\bin\EntityFramework.xml
+F:\github\ASP.NET-Identity-User-Management\Users\bin\EntityFramework.SqlServer.xml
+F:\github\ASP.NET-Identity-User-Management\Users\bin\Microsoft.AspNet.Identity.Core.xml
+F:\github\ASP.NET-Identity-User-Management\Users\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+F:\github\ASP.NET-Identity-User-Management\Users\bin\Microsoft.AspNet.Identity.Owin.xml
+F:\github\ASP.NET-Identity-User-Management\Users\bin\Microsoft.Owin.xml
+F:\github\ASP.NET-Identity-User-Management\Users\bin\Microsoft.Owin.Host.SystemWeb.xml
+F:\github\ASP.NET-Identity-User-Management\Users\bin\Microsoft.Owin.Security.xml
+F:\github\ASP.NET-Identity-User-Management\Users\bin\Microsoft.Owin.Security.Cookies.xml
+F:\github\ASP.NET-Identity-User-Management\Users\bin\Microsoft.Owin.Security.OAuth.xml
+F:\github\ASP.NET-Identity-User-Management\Users\bin\System.Web.Helpers.xml
+F:\github\ASP.NET-Identity-User-Management\Users\bin\System.Web.Mvc.xml
+F:\github\ASP.NET-Identity-User-Management\Users\bin\System.Web.Razor.xml
+F:\github\ASP.NET-Identity-User-Management\Users\bin\System.Web.WebPages.xml
+F:\github\ASP.NET-Identity-User-Management\Users\bin\System.Web.WebPages.Deployment.xml
+F:\github\ASP.NET-Identity-User-Management\Users\bin\System.Web.WebPages.Razor.xml
+F:\github\ASP.NET-Identity-User-Management\Users\obj\Debug\Users.csprojResolveAssemblyReference.cache
+F:\github\ASP.NET-Identity-User-Management\Users\obj\Debug\Users.dll
+F:\github\ASP.NET-Identity-User-Management\Users\obj\Debug\Users.pdb
