@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -13,6 +14,12 @@ namespace Users
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            //AuthorizeRequest += MvcApplication_AuthorizeRequest;
+        }
+
+        private void MvcApplication_AuthorizeRequest(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
     }
 }

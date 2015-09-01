@@ -13,7 +13,7 @@ namespace Users.Infrastructure
 
         static AppIdentityDbContext()
         {
-            Database.SetInitializer(new IdentityDbInit());
+            Database.SetInitializer<AppIdentityDbContext>(new IdentityDbInit());
         }
 
         public static AppIdentityDbContext Create()

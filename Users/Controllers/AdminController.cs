@@ -8,6 +8,7 @@ using Users.Models;
 
 namespace Users.Controllers
 {
+    [Authorize(Roles = "Administrator")]
     public class AdminController : Controller
     {
         public ActionResult Index()

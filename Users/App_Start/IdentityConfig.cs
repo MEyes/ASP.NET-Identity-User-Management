@@ -41,7 +41,7 @@ namespace Users
             //5.var newClaimsPrincipal = new ClaimsPrincipal(identity);
             //5._context.Request.User = newClaimsPrincipal;
             //6.ApplyResponseGrantAsync：Response cookie
-
+            //http://www.asp.net/aspnet/overview/owin-and-katana/owin-middleware-in-the-iis-integrated-pipeline
             app.UseCookieAuthentication(new CookieAuthenticationOptions
             {
                 AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,
