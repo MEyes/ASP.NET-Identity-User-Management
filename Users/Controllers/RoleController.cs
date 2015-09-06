@@ -26,7 +26,11 @@ namespace Users.Controllers
         {
             return View();
         }
-
+        /// <summary>
+        /// 编辑操作，获取所有隶属于此Role的成员和非隶属于此Role的成员
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public async Task<ActionResult> Edit(string id)
         {
             AppRole role = await RoleManager.FindByIdAsync(id);
@@ -51,18 +55,21 @@ namespace Users.Controllers
                     result = await UserManager.AddToRoleAsync(userId, model.RoleName);
                     if (!result.Succeeded)
                     {
-                        return View("Index");
-                        //return View("Error", result.Errors);
+                        return View("Error", result.Errors);
                     }
                 }
                 foreach (var userId in model.IDsToDelete??new string[] {})
                 {
+                    //演示用，正式部署时去掉
+                    if (userId == "40b14987-2de6-4a94-a793-790606a64da4"  && model.RoleName=="Administrator"  )
+                    {
+                        return View("Error", new string[] { "请勿修改Admin的角色！" });
+                    }
+                    
                     result = await UserManager.RemoveFromRoleAsync(userId, model.RoleName);
                     if (!result.Succeeded)
                     {
-
-                        return View("Index");
-                        //return View("Error", result.Errors);
+                        return View("Error", result.Errors);
                     }
                 }
                 return RedirectToAction("Index");
@@ -94,6 +101,11 @@ namespace Users.Controllers
             AppRole role = await RoleManager.FindByIdAsync(id);
             if (role != null)
             {
+                if (role.Name=="Administrator")
+                {
+                    return View("Error", new string[] { "请勿删除该管理员角色！" });
+                }
+                
                 IdentityResult result = await RoleManager.DeleteAsync(role);
                 if (result.Succeeded)
                 {

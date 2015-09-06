@@ -8,7 +8,7 @@ namespace Users.Controllers
         [Authorize]
         public ActionResult Index()
         {
-            return View();
+            return View(GetData("Index"));
         }
 
         [Authorize(Roles = "Users")]
@@ -23,10 +23,10 @@ namespace Users.Controllers
                 = new Dictionary<string, object>();
 
             dict.Add("Action", actionName);
-            dict.Add("User", HttpContext.User.Identity.Name);
-            dict.Add("Authenticated", HttpContext.User.Identity.IsAuthenticated);
-            dict.Add("Auth Type", HttpContext.User.Identity.AuthenticationType);
-            dict.Add("In Users Role", HttpContext.User.IsInRole("Users"));
+            dict.Add("用户", HttpContext.User.Identity.Name);
+            dict.Add("是否身份验证通过", HttpContext.User.Identity.IsAuthenticated);
+            dict.Add("身份验证类型", HttpContext.User.Identity.AuthenticationType);
+            dict.Add("是否隶属于Administrator", HttpContext.User.IsInRole("Administrator"));
             return dict;
         }
     }

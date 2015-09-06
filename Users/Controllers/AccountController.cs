@@ -16,9 +16,10 @@ namespace Users.Controllers
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)
         {
+            //如果登录用户已经Authenticated，提示请勿重复登录
             if (HttpContext.User.Identity.IsAuthenticated)
             {
-                return View("Error", new string[] {"Access Denied"});
+                return View("Error", new string[] {"您已经登录！"});
             }
             ViewBag.returnUrl = returnUrl;
             return View();
@@ -65,7 +66,5 @@ namespace Users.Controllers
         {
             get { return HttpContext.GetOwinContext().GetUserManager<AppUserManager>(); }
         }
-
-        
     }
 }

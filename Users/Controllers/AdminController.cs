@@ -45,6 +45,11 @@ namespace Users.Controllers
             AppUser user = await UserManager.FindByIdAsync(id);
             if (user != null)
             {
+                if (user.UserName=="Admin")
+                {
+                    return View("Error", new[] { "请勿删除管理员！" });
+                }
+                                
                 IdentityResult result = await UserManager.DeleteAsync(user);
                 if (result.Succeeded)
                 {
@@ -73,6 +78,11 @@ namespace Users.Controllers
 
             if (user != null)
             {
+                if (user.UserName=="Admin")
+                {
+                    return View("Error", new[] { "请勿修改管理员密码！" });
+                }
+                
                 IdentityResult validPass = null;
                 if (password != string.Empty)
                 {

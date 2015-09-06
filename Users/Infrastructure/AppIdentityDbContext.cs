@@ -34,30 +34,30 @@ namespace Users.Infrastructure
         public void PerformInitialSetup(AppIdentityDbContext context)
         {
             // 初始化
-            AppUserManager userMgr = new AppUserManager(new UserStore<AppUser>(context));
-            AppRoleManager roleMgr = new AppRoleManager(new RoleStore<AppRole>(context));
+            AppUserManager userManager = new AppUserManager(new UserStore<AppUser>(context));
+            AppRoleManager roleManager = new AppRoleManager(new RoleStore<AppRole>(context));
 
-            string roleName = "Administrators";
+            string roleName = "Administrator";
             string userName = "Admin";
-            string password = "MySecret";
-            string email = "admin@example.com";
+            string password = "Password2015";
+            string email = "admin@jkxy.com";
 
-            if (!roleMgr.RoleExists(roleName))
+            if (!roleManager.RoleExists(roleName))
             {
-                roleMgr.Create(new AppRole(roleName));
+                roleManager.Create(new AppRole(roleName));
             }
 
-            AppUser user = userMgr.FindByName(userName);
+            AppUser user = userManager.FindByName(userName);
             if (user == null)
             {
-                userMgr.Create(new AppUser { UserName = userName, Email = email },
+                userManager.Create(new AppUser { UserName = userName, Email = email },
                     password);
-                user = userMgr.FindByName(userName);
+                user = userManager.FindByName(userName);
             }
 
-            if (!userMgr.IsInRole(user.Id, roleName))
+            if (!userManager.IsInRole(user.Id, roleName))
             {
-                userMgr.AddToRole(user.Id, roleName);
+                userManager.AddToRole(user.Id, roleName);
             }
         }
     }

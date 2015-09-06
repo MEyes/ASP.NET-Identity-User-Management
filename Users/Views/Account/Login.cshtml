@@ -1,4 +1,5 @@
-﻿@model Users.Models.LoginModel
+﻿@using System.Web.UI.WebControls
+@model Users.Models.LoginModel
 @{
     ViewBag.Title = "登录";
 }
@@ -11,11 +12,11 @@
     <input type="hidden" name="returnUrl" value="@ViewBag.ReturnUrl"/>
     <div class="form-group">
         <label>用户名</label>
-        @Html.TextBoxFor(x=>x.Name,new {@class="form-control"})
+        @Html.TextBoxFor(x=>x.Name,new {@class="form-control",placeholder="Admin"})
     </div>
     <div class="form-group">
         <label>密码</label>
-        @Html.PasswordFor(x => x.Password, new {@class = "form-control"})
+        @Html.PasswordFor(x => x.Password, new {@class = "form-control",placeholder="Password2015"})
     </div>
     <button class="btn btn-primary" type="submit">登录</button>
 }

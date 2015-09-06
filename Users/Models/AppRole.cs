@@ -10,5 +10,6 @@ namespace Users.Models
     {
         public AppRole() : base() { }
         public AppRole(string name) : base(name) { }
+        // 在此添加额外属性
     }
 }

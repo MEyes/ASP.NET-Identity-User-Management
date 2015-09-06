@@ -11,22 +11,22 @@
     <input type="hidden" name="roleName" value="@Model.Role.Name"/>
     <div class="panel panel-primary">
         <div class="panel-heading">
-            Add to @Model.Role.Name
+            向角色【 @Model.Role.Name】添加用户
         </div>
         <table class="table table-striped">
             @if (Model.NonMembers.Count() == 0)
             {
                 <tr>
                     <td colspan="2">
-                        All Users Are Members
+                        暂无
                     </td>
                 </tr>
             }
             else
             {
                 <tr>
-                    <td>User ID</td>
-                    <td>Add To Role</td>
+                    <td>用户名</td>
+                    <td>添加至角色</td>
                 </tr>
                 foreach (AppUser user in Model.NonMembers)
                 {
@@ -42,16 +42,19 @@
     </div>
     <div class="panel panel-primary">
         <div class="panel-heading">
-            Romove From @Model.Role.Name
+            从角色【 @Model.Role.Name】移除用户
         </div>
         <table class="table table-striped">
             @if (Model.Members.Count() == 0)
             {
-                <tr><td colspan="2">No Users Are Members</td></tr>
+                <tr><td colspan="2">暂无</td></tr>
             }
             else
             {
-                <tr><td>User ID</td><td>Remove From Role</td></tr>
+                <tr>
+                    <td>用户名</td>
+                    <td>从角色中移除</td>
+                </tr>
                 foreach (AppUser user in Model.Members)
                 {
                     <tr>
@@ -65,5 +68,5 @@
         </table>
     </div>
     <button type="submit" class="btn btn-primary">保存</button>
-    @Html.ActionLink("Cancel", "Index", null, new { @class = "btn btn-default" })
+    @Html.ActionLink("取消", "Index", null, new { @class = "btn btn-default" })
 }

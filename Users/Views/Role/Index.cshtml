@@ -38,9 +38,9 @@
                     <td>
                         @using (Html.BeginForm("Delete", "Role", new {id = role.Id}))
                         {
-                            @Html.ActionLink("Edit", "Edit", new {id = role.Id}, new {@class = "btn btn-primary btn-xs"})
+                            @Html.ActionLink("编辑", "Edit", new {id = role.Id}, new {@class = "btn btn-primary btn-xs"})
                             <button class="btn btn-danger btn-xs" type="submit">
-                                Delete
+                                删除
                             </button>
                         }
                     </td>
@@ -50,4 +50,4 @@
 
     </table>
 </div>
-@Html.ActionLink("Create", "Create", null, new { @class = "btn btn-primary" })
+@Html.ActionLink("创建", "Create", null, new { @class = "btn btn-primary" })
