@@ -1,0 +1,46 @@
+﻿@using Users.Models
+@model IEnumerable<AppUser>
+@{
+    ViewBag.Title = "Index";
+}
+<div class="panel panel-primary">
+    <div class="panel-heading" style="text-align: center">
+        ASP.NET Identity 用户管理
+    </div>
+    <table class="table table-striped">
+        <tr>
+            <th>ID</th>
+            <th>用户名</th>
+            <th>Email</th>
+            <th></th>
+        </tr>
+        @if (Model.Count() == 0)
+        {
+            <tr><td colspan="4" class="text-center">暂无用户</td></tr>
+        }
+        else
+        {
+            foreach (AppUser user in Model)
+            {
+                <tr>
+                    <td>@user.Id</td>
+                    <td>@user.UserName</td>
+                    <td>@user.Email</td>
+                    <td>
+                        @using (Html.BeginForm("Delete", "Admin",
+                            new {id = user.Id}))
+                        {
+                            @Html.ActionLink("编辑", "Edit", new {id = user.Id},
+                                new {@class = "btn btn-primary btn-xs"})
+                            <button class="btn btn-danger btn-xs"
+                                    type="submit">
+                                删除
+                            </button>
+                        }
+                    </td>
+                </tr>
+            }
+        }
+    </table>
+</div>
+@Html.ActionLink("创建", "Create", null, new {@class = "btn btn-primary"})

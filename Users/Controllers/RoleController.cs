@@ -61,7 +61,8 @@ namespace Users.Controllers
                 foreach (var userId in model.IDsToDelete??new string[] {})
                 {
                     //演示用，正式部署时去掉
-                    if (userId == "40b14987-2de6-4a94-a793-790606a64da4"  && model.RoleName=="Administrator"  )
+                    var currentUser = await UserManager.FindByIdAsync(userId);
+                    if (currentUser.UserName=="Admin"  && model.RoleName=="Administrator"  )
                     {
                         return View("Error", new string[] { "请勿修改Admin的角色！" });
                     }

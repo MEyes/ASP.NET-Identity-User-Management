@@ -1,0 +1,24 @@
+﻿@model IEnumerable<string>
+@{ ViewBag.Title = "Error";}
+
+<div class="alert alert-danger">
+    @switch (Model.Count())
+    {
+        case 0:
+            @: 发生意外错误，请重试！
+            break;
+        case 1:
+        @Model.First();
+                          break;
+        default:
+        @: 出现了如下错误：
+        <ul>
+            @foreach (string error in Model)
+            {
+                <li>@error</li>
+            }
+        </ul>
+            break;
+    }
+</div>
+@Html.ActionLink("OK", "Index", null, new { @class = "btn btn-default" })

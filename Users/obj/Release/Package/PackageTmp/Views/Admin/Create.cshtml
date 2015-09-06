@@ -1,0 +1,23 @@
+﻿@model Users.Models.UserViewModel
+@{
+    ViewBag.Title = "创建用户";
+}
+<h2>创建用户</h2>
+@Html.ValidationSummary(false)
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        <label>用户名</label>
+        @Html.TextBoxFor(x => x.Name, new {@class = "form-control"})
+    </div>
+    <div class="form-group">
+        <label>Email</label>
+        @Html.TextBoxFor(x => x.Email, new {@class = "form-control"})
+    </div>
+    <div class="form-group">
+        <label>密码</label>
+        @Html.PasswordFor(x => x.Password, new {@class = "form-control"})
+    </div>
+    <button type="submit" class="btn btn-primary">创建</button>
+    @Html.ActionLink("取消", "Index", null, new {@class = "btn btn-default"})
+}
