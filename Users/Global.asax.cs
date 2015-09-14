@@ -14,12 +14,6 @@ namespace Users
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-            //AuthorizeRequest += MvcApplication_AuthorizeRequest;
-        }
-
-        private void MvcApplication_AuthorizeRequest(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
         }
     }
 }

@@ -179,6 +179,15 @@
     <Compile Include="Infrastructure\CustomPasswordValidator.cs" />
     <Compile Include="Infrastructure\CustomUserValidator.cs" />
     <Compile Include="Infrastructure\IdentityHelper.cs" />
+    <Compile Include="Migrations\201509140926333_Init.cs" />
+    <Compile Include="Migrations\201509140926333_Init.Designer.cs">
+      <DependentUpon>201509140926333_Init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201509140936514_AddCountryProperty.cs" />
+    <Compile Include="Migrations\201509140936514_AddCountryProperty.Designer.cs">
+      <DependentUpon>201509140936514_AddCountryProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AppRole.cs" />
     <Compile Include="Models\AppUser.cs" />
     <Compile Include="Models\LoginModel.cs" />
@@ -196,6 +205,7 @@
     <Content Include="Views\Role\Index.cshtml" />
     <Content Include="Views\Role\Edit.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Home\UserProps.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -205,6 +215,14 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201509140926333_Init.resx">
+      <DependentUpon>201509140926333_Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201509140936514_AddCountryProperty.resx">
+      <DependentUpon>201509140936514_AddCountryProperty.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
