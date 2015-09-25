@@ -11,6 +11,7 @@ using Users.Infrastructure;
 
 namespace Users
 {
+    using Microsoft.Owin.Security.Google;
     using AppFunc = Func<IDictionary<string, object>, Task>;
     public class IdentityConfig
     {
@@ -46,6 +47,13 @@ namespace Users
             {
                 AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,
                 LoginPath = new PathString("/Account/Login")
+            });
+            app.UseExternalSignInCookie(DefaultAuthenticationTypes.ExternalCookie);
+            //http://www.asp.net/mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "165066370005-6nhsp87llelff3tou91hhktg6eqgr0ke.apps.googleusercontent.com",
+                ClientSecret = "euWbCSUZujjQGKMqOyz0msbq",
             });
         }
     }

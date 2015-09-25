@@ -15,19 +15,18 @@ namespace Users.Models {
         {
             switch (city)
             {
-                case Cities.上海:
-                case Cities.杭州:
-                    Country=Countries.中国;
+                case Cities.Shanghai:
+                case Cities.Hangzhou:
+                    Country=Countries.China;
                     break;
-                case Cities.纽约:
-                case Cities.洛杉矶:
-                    Country=Countries.美国;
+                case Cities.NewYork:
+                    Country=Countries.USA;
                     break;
-                  case Cities.东京:
-                    Country=Countries.日本;
+                  case Cities.Tokyo:
+                    Country=Countries.Japan;
                     break;
                 default:
-                    Country=Countries.无;
+                    Country=Countries.None;
                     break;
             }
         }
@@ -36,17 +35,16 @@ namespace Users.Models {
 
     public enum Countries
     {
-        中国,
-        美国,
-        日本,
-        无
+        China,
+        USA,
+        Japan,
+        None
     }
     public enum Cities
     {
-        上海,
-        杭州,
-        纽约,
-        洛杉矶,
-        东京
+        Shanghai,
+        Hangzhou,
+        NewYork,
+        Tokyo
     }
 }

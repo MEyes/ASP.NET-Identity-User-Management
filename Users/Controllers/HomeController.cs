@@ -17,7 +17,7 @@ namespace Users.Controllers
             return View(GetData("Index"));
         }
 
-        [Authorize(Roles = "Users")]
+        [Authorize(Roles = "Employee")]
         public ActionResult OtherAction()
         {
             return View("Index", GetData("OtherAction"));

@@ -47,7 +47,7 @@ namespace Users.Migrations
             }
             foreach (AppUser dbUser in userManager.Users)
             {
-                if (dbUser.Country==Countries.нч)
+                if (dbUser.Country==Countries.None)
                 {
                     dbUser.SetCountryFromCity(dbUser.City);
                 }

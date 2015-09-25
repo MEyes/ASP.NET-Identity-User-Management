@@ -78,7 +78,6 @@ F:\github\ASP.NET-Identity-User-Management\Users\bin\System.Web.Razor.xml
 F:\github\ASP.NET-Identity-User-Management\Users\bin\System.Web.WebPages.xml
 F:\github\ASP.NET-Identity-User-Management\Users\bin\System.Web.WebPages.Deployment.xml
 F:\github\ASP.NET-Identity-User-Management\Users\bin\System.Web.WebPages.Razor.xml
-F:\github\ASP.NET-Identity-User-Management\Users\obj\Debug\Users.csprojResolveAssemblyReference.cache
 F:\github\ASP.NET-Identity-User-Management\Users\obj\Debug\Users.dll
 F:\github\ASP.NET-Identity-User-Management\Users\obj\Debug\Users.pdb
 G:\github\ASP.NET-Identity-User-Management\Users\bin\Users.dll.config
@@ -126,3 +125,12 @@ G:\github\ASP.NET-Identity-User-Management\Users\obj\Debug\Users.csprojResolveAs
 G:\github\ASP.NET-Identity-User-Management\Users\obj\Debug\Users.Migrations.Init.resources
 G:\github\ASP.NET-Identity-User-Management\Users\obj\Debug\Users.csproj.GenerateResource.Cache
 G:\github\ASP.NET-Identity-User-Management\Users\obj\Debug\Users.Migrations.AddCountryProperty.resources
+F:\github\ASP.NET-Identity-User-Management\Users\obj\Debug\Users.Migrations.Init.resources
+F:\github\ASP.NET-Identity-User-Management\Users\obj\Debug\Users.Migrations.AddCountryProperty.resources
+F:\github\ASP.NET-Identity-User-Management\Users\obj\Debug\Users.csproj.GenerateResource.Cache
+F:\github\ASP.NET-Identity-User-Management\Users\bin\Microsoft.Owin.Security.Google.dll
+F:\github\ASP.NET-Identity-User-Management\Users\bin\Microsoft.Owin.Security.Google.xml
+F:\github\ASP.NET-Identity-User-Management\Users\bin\Newtonsoft.Json.xml
+F:\github\ASP.NET-Identity-User-Management\Users\obj\Debug\Users.csprojResolveAssemblyReference.cache
+G:\github\ASP.NET-Identity-User-Management\Users\bin\Microsoft.Owin.Security.Google.dll
+G:\github\ASP.NET-Identity-User-Management\Users\bin\Microsoft.Owin.Security.Google.xml

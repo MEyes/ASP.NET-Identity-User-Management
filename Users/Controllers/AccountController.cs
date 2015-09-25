@@ -45,8 +45,9 @@ namespace Users.Controllers
                 }
                 else
                 {
-                    var claimsIdentity =
-                        await UserManager.CreateIdentityAsync(user, DefaultAuthenticationTypes.ApplicationCookie);
+                    var claimsIdentity = await UserManager.CreateIdentityAsync(user, DefaultAuthenticationTypes.ApplicationCookie);
+                    claimsIdentity.AddClaims(LocationClaimsProvider.GetClaims(claimsIdentity));
+                    claimsIdentity.AddClaims(ClaimsRoles.CreateRolesFromClaims(claimsIdentity));
                     AuthManager.SignOut();
                     AuthManager.SignIn(new AuthenticationProperties {IsPersistent = false}, claimsIdentity);
                     return Redirect(returnUrl);
@@ -57,11 +58,62 @@ namespace Users.Controllers
             return View(model);
         }
 
+        [HttpPost]
+        [AllowAnonymous]
+        public ActionResult GoogleLogin(string returnUrl)
+        {
+            var properties = new AuthenticationProperties
+            {
+                RedirectUri = Url.Action("GoogleLoginCallback",
+                new { returnUrl = returnUrl })
+            };
+            HttpContext.GetOwinContext().Authentication.Challenge(properties, "Google");
+            return new HttpUnauthorizedResult();
+        }
+        /// <summary>
+        /// Google登陆成功后（即授权成功）回掉此Action
+        /// </summary>
+        /// <param name="returnUrl"></param>
+        /// <returns></returns>
+        [AllowAnonymous]
+        public async Task<ActionResult> GoogleLoginCallback(string returnUrl)
+        {
+            ExternalLoginInfo loginInfo = await AuthManager.GetExternalLoginInfoAsync();
+            AppUser user = await UserManager.FindAsync(loginInfo.Login);
+            if (user == null)
+            {
+                user = new AppUser
+                {
+                    Email = loginInfo.Email,
+                    UserName = loginInfo.DefaultUserName,
+                    City = Cities.Shanghai,
+                    Country = Countries.China
+                };
+
+                IdentityResult result = await UserManager.CreateAsync(user);
+                if (!result.Succeeded)
+                {
+                    return View("Error", result.Errors);
+                }
+                result = await UserManager.AddLoginAsync(user.Id, loginInfo.Login);
+                if (!result.Succeeded)
+                {
+                    return View("Error", result.Errors);
+                }
+            }
+            ClaimsIdentity ident = await UserManager.CreateIdentityAsync(user,
+                DefaultAuthenticationTypes.ApplicationCookie);
+            ident.AddClaims(loginInfo.ExternalIdentity.Claims);
+            AuthManager.SignIn(new AuthenticationProperties
+            {
+                IsPersistent = false
+            }, ident);
+            return Redirect(returnUrl ?? "/");
+        }
         private IAuthenticationManager AuthManager
         {
             get { return HttpContext.GetOwinContext().Authentication; }
         }
-
         private AppUserManager UserManager
         {
             get { return HttpContext.GetOwinContext().GetUserManager<AppUserManager>(); }

@@ -15,7 +15,7 @@
     <AssemblyName>Users</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
-    <IISExpressSSLPort />
+    <IISExpressSSLPort>44300</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -75,6 +75,9 @@
     <Reference Include="Microsoft.Owin.Security.Cookies, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Owin.Security.OAuth, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -145,7 +148,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
+    <None Include="Properties\PublishProfiles\myusermanagement - FTP %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\myusermanagement - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\myusermanagement - Web Deploy %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\myusermanagement - Web Deploy.pubxml" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -168,6 +173,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\ClaimsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Global.asax.cs">
@@ -176,9 +182,12 @@
     <Compile Include="Infrastructure\AppIdentityDbContext.cs" />
     <Compile Include="Infrastructure\AppRoleManager.cs" />
     <Compile Include="Infrastructure\AppUserManager.cs" />
+    <Compile Include="Infrastructure\ClaimsAccessAttribute.cs" />
+    <Compile Include="Infrastructure\ClaimsRoles.cs" />
     <Compile Include="Infrastructure\CustomPasswordValidator.cs" />
     <Compile Include="Infrastructure\CustomUserValidator.cs" />
     <Compile Include="Infrastructure\IdentityHelper.cs" />
+    <Compile Include="Infrastructure\LocationClaimsProvider.cs" />
     <Compile Include="Migrations\201509140926333_Init.cs" />
     <Compile Include="Migrations\201509140926333_Init.Designer.cs">
       <DependentUpon>201509140926333_Init.cs</DependentUpon>
@@ -206,6 +215,7 @@
     <Content Include="Views\Role\Edit.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Home\UserProps.cshtml" />
+    <Content Include="Views\Claims\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -239,7 +249,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>60533</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:60533/</IISUrl>
+          <IISUrl>https://localhost:44300/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

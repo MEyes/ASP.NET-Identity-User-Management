@@ -17,10 +17,10 @@ namespace Users.Infrastructure
         {
             IdentityResult result = await base.ValidateAsync(user);
 
-            if (!user.Email.ToLower().EndsWith("@jkxy.com"))
+            if (!user.Email.ToLower().EndsWith("@gmail.com"))
             {
                 List<string> errors = result.Errors.ToList();
-                errors.Add("Email 地址只支持jkxy域名");
+                errors.Add("Email 地址只支持gmail域名");
                 result = new IdentityResult(errors);
             }
             return result;

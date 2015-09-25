@@ -20,3 +20,9 @@
     </div>
     <button class="btn btn-primary" type="submit">登录</button>
 }
+
+@using (Html.BeginForm("GoogleLogin", "Account"))
+{
+    <input type="hidden" name="returnUrl" value="@ViewBag.returnUrl" />
+    <button class="btn btn-primary" type="submit">Log In via Google</button>
+}

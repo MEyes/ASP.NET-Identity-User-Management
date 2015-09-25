@@ -25,20 +25,21 @@ namespace Users.Infrastructure {
             AppUserManager manager = new AppUserManager(new UserStore<AppUser>(db));
 
             //自定义的User Validator
-            manager.UserValidator = new CustomUserValidator(manager) {
-                AllowOnlyAlphanumericUserNames = true,
+            manager.UserValidator = new CustomUserValidator(manager)
+            {
+                AllowOnlyAlphanumericUserNames = false,
                 RequireUniqueEmail = true
             };
 
             //自定义的Password Validator
-            manager.PasswordValidator = new CustomPasswordValidator
-            {
-                RequiredLength = 6,
-                RequireNonLetterOrDigit = false,
-                RequireDigit = false,
-                RequireLowercase = true,
-                RequireUppercase = true
-            };
+            //manager.PasswordValidator = new CustomPasswordValidator
+            //{
+            //    RequiredLength = 6,
+            //    RequireNonLetterOrDigit = false,
+            //    RequireDigit = false,
+            //    RequireLowercase = true,
+            //    RequireUppercase = true
+            //};
             return manager;
         }
     }

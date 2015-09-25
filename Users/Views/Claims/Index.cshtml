@@ -1,0 +1,28 @@
+﻿@using System.Security.Claims
+@using Users.Infrastructure
+@model IEnumerable<Claim>
+@{
+    ViewBag.Title = "Index";
+}
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        声明
+    </div>
+    <table class="table table-striped">
+        <tr>
+            <th>Subject</th>
+            <th>Issuer</th>
+            <th>Type</th>
+            <th>Value</th>
+        </tr>
+        @foreach (Claim claim in Model.OrderBy(x=>x.Type))
+        {
+            <tr>
+                <td>@claim.Subject.Name</td>
+                <td>@claim.Issuer</td>
+                <td>@Html.ClaimType(claim.Type)</td>
+                <td>@claim.Value</td>
+            </tr>
+        }
+    </table>
+</div>
