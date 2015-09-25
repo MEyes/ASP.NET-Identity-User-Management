@@ -24,8 +24,8 @@ namespace Users.Controllers
             }
         }
 
-      
-        [Authorize(Roles = "ShStaff")]
+
+        [Authorize(Roles = "BjStaff")]
         public string OtherAction()
         {
             return "这是一个受保护的Action";

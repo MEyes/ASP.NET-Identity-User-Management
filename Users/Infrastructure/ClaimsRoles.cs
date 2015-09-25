@@ -12,11 +12,11 @@ namespace Users.Infrastructure
         {
             List<Claim> claims = new List<Claim>();
             if (user.HasClaim(x => x.Type == ClaimTypes.StateOrProvince
-            && x.Issuer == "RemoteClaims" && x.Value == "上海")
+            && x.Issuer == "RemoteClaims" && x.Value == "北京")
             && user.HasClaim(x => x.Type == ClaimTypes.Role
             && x.Value == "Employee"))
             {
-                claims.Add(new Claim(ClaimTypes.Role, "ShStaff"));
+                claims.Add(new Claim(ClaimTypes.Role, "BjStaff"));
             }
             return claims;
         }
