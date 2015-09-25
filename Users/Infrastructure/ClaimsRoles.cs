@@ -16,7 +16,7 @@ namespace Users.Infrastructure
             && user.HasClaim(x => x.Type == ClaimTypes.Role
             && x.Value == "Employee"))
             {
-                claims.Add(new Claim(ClaimTypes.Role, "DCStaff"));
+                claims.Add(new Claim(ClaimTypes.Role, "ShStaff"));
             }
             return claims;
         }

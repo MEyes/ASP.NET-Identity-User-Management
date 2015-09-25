@@ -122,7 +122,6 @@ G:\github\ASP.NET-Identity-User-Management\Users\obj\Debug\Users.dll
 G:\github\ASP.NET-Identity-User-Management\Users\obj\Debug\Users.pdb
 G:\github\ASP.NET-Identity-User-Management\Users\bin\Newtonsoft.Json.xml
 G:\github\ASP.NET-Identity-User-Management\Users\obj\Debug\Users.csprojResolveAssemblyReference.cache
-G:\github\ASP.NET-Identity-User-Management\Users\obj\Debug\Users.Migrations.Init.resources
 G:\github\ASP.NET-Identity-User-Management\Users\obj\Debug\Users.csproj.GenerateResource.Cache
 G:\github\ASP.NET-Identity-User-Management\Users\obj\Debug\Users.Migrations.AddCountryProperty.resources
 F:\github\ASP.NET-Identity-User-Management\Users\obj\Debug\Users.Migrations.Init.resources

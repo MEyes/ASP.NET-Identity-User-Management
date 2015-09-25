@@ -188,10 +188,6 @@
     <Compile Include="Infrastructure\CustomUserValidator.cs" />
     <Compile Include="Infrastructure\IdentityHelper.cs" />
     <Compile Include="Infrastructure\LocationClaimsProvider.cs" />
-    <Compile Include="Migrations\201509140926333_Init.cs" />
-    <Compile Include="Migrations\201509140926333_Init.Designer.cs">
-      <DependentUpon>201509140926333_Init.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\201509140936514_AddCountryProperty.cs" />
     <Compile Include="Migrations\201509140936514_AddCountryProperty.Designer.cs">
       <DependentUpon>201509140936514_AddCountryProperty.cs</DependentUpon>
@@ -227,9 +223,6 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201509140926333_Init.resx">
-      <DependentUpon>201509140926333_Init.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201509140936514_AddCountryProperty.resx">
       <DependentUpon>201509140936514_AddCountryProperty.cs</DependentUpon>
     </EmbeddedResource>

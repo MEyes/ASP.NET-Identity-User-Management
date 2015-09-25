@@ -24,11 +24,16 @@ namespace Users.Controllers
             }
         }
 
-        //[ClaimsAccess(Issuer = "RemoteClaims", ClaimType = ClaimTypes.PostalCode, Value = "上海")]
-        [Authorize(Roles = "DCStaff")]
+      
+        [Authorize(Roles = "ShStaff")]
         public string OtherAction()
         {
             return "这是一个受保护的Action";
+        }
+         [ClaimsAccess(Issuer = "RemoteClaims", ClaimType = ClaimTypes.PostalCode, Value = "200000")]
+        public string AnotherAction()
+        {
+            return "这也是一个受保护的Action";
         }
 	}
 }

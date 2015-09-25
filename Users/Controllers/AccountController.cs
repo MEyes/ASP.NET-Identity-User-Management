@@ -17,6 +17,7 @@ namespace Users.Controllers
         public ActionResult Login(string returnUrl)
         {
             //如果登录用户已经Authenticated，提示请勿重复登录
+
             if (HttpContext.User.Identity.IsAuthenticated)
             {
                 return View("Error", new string[] {"您已经登录！"});
@@ -36,6 +37,7 @@ namespace Users.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Login(LoginModel model,string returnUrl)
         {
+            
             if (ModelState.IsValid)
             {
                 AppUser user = await UserManager.FindAsync(model.Name, model.Password);
@@ -50,6 +52,7 @@ namespace Users.Controllers
                     claimsIdentity.AddClaims(ClaimsRoles.CreateRolesFromClaims(claimsIdentity));
                     AuthManager.SignOut();
                     AuthManager.SignIn(new AuthenticationProperties {IsPersistent = false}, claimsIdentity);
+
                     return Redirect(returnUrl);
                 }
             }

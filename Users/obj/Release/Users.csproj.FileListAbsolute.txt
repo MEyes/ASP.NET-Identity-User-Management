@@ -87,3 +87,7 @@ F:\github\ASP.NET-Identity-User-Management\Users\obj\Release\Users.Migrations.Ad
 F:\github\ASP.NET-Identity-User-Management\Users\obj\Release\Users.csproj.GenerateResource.Cache
 F:\github\ASP.NET-Identity-User-Management\Users\obj\Release\Users.dll
 F:\github\ASP.NET-Identity-User-Management\Users\obj\Release\Users.pdb
+G:\github\ASP.NET-Identity-User-Management\Users\bin\Microsoft.Owin.Security.Google.dll
+G:\github\ASP.NET-Identity-User-Management\Users\bin\Microsoft.Owin.Security.Google.xml
+G:\github\ASP.NET-Identity-User-Management\Users\obj\Release\Users.Migrations.AddCountryProperty.resources
+G:\github\ASP.NET-Identity-User-Management\Users\obj\Release\Users.csproj.GenerateResource.Cache
